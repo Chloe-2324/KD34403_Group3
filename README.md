@@ -100,7 +100,7 @@ All models also underwent **threshold tuning** on the validation set to maximise
 
 =====================
 
-## ⚙️ Requirements
+## Requirements
 
 ```
 python >= 3.9
