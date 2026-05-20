@@ -92,9 +92,9 @@ All models also underwent **threshold tuning** on the validation set to maximise
 |-------|----------|-------------------|----------|---------|
 | LR Baseline (demographics only) | 0.6250 | 0.5993 | 0.2538 | 0.6395 |
 | Logistic Regression (enhanced) | 0.8283 | 0.7502 | 0.4601 | 0.8026 |
-| Random Forest | | | | |
-| **XGBoost** ✅✅ | | | | |
-| Stacking Ensemble | | | | |
+| Random Forest | 0.8686 | 0.7554 | 0.5108 | 0.8045 |
+| **XGBoost** ✅✅ | 0.8480 | 0.7613 | 0.4905 | 0.8084 |
+| Stacking Ensemble | 0.8844 | 0.7448 | 0.5240 | 0.8089 |
 
 > **XGBoost was selected as the final model.** The stacking ensemble performed marginally lower, likely due to the linear meta-learner limiting combination of non-linear base outputs.
 
