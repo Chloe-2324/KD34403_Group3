@@ -129,7 +129,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn xgboos
 
 In Colab:
 * File → Open notebook → GitHub tab
-* paste your repo URL
+* paste the repo URL
 * select notebook.ipynb 
 
 ### Step 2 — Install Required Libraries
