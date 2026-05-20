@@ -1,5 +1,5 @@
 # KD34403_Group3
-# 🏦 Bank Marketing — Term Deposit Subscription Prediction
+# Bank Marketing — Term Deposit Subscription Prediction
 
 > **KD34403 Machine Learning for Data Science — Group 3 Project**
 
@@ -19,10 +19,6 @@ This project builds a machine learning pipeline to predict whether a bank client
 
 Using the [UCI Bank Marketing dataset](https://archive.ics.uci.edu/dataset/222/bank+marketing) (`bank-additional-full.csv`, 41,188 rows, 20 features), we address a classic **binary classification** problem on highly imbalanced data (~11% positive class).
 
-**Core Question:** *Can we predict which clients will subscribe to a term deposit, based on their demographics and campaign interaction features?*
-
-**Business Value:** By targeting only the top 30% of clients ranked by predicted probability, the final model captures approximately **74% of all true subscribers** — making it **~2.5× more cost-efficient** than random outreach.
-
 =====================
 
 ## Repository Structure
@@ -39,7 +35,7 @@ Using the [UCI Bank Marketing dataset](https://archive.ics.uci.edu/dataset/222/b
 
 =====================
 
-## 🧠 ML Pipeline Summary
+## MACHINE LEARNING Pipeline Summary
 
 ### 1. Problem Definition
 - **Type:** Binary Classification
@@ -76,9 +72,9 @@ Using the [UCI Bank Marketing dataset](https://archive.ics.uci.edu/dataset/222/b
 
 ### 5. Imbalance Handling
 Three techniques were evaluated for each model:
-- **Tomek Links** — undersampling; removes borderline majority samples
-- **SMOTE** — oversampling; synthesises new minority samples using k-NN
-- **SMOTETomek** — hybrid; combines both approaches
+- **Tomek Links** —> undersampling; removes borderline majority samples
+- **SMOTE** —> oversampling; synthesises new minority samples using k-NN
+- **SMOTETomek** —> hybrid; combines both approaches
 
 ### 6. Models Trained
 | Model | Best Imbalance Technique | Tuning Methods Tried |
@@ -97,7 +93,7 @@ All models also underwent **threshold tuning** on the validation set to maximise
 | LR Baseline (demographics only) | — | ~0.69 | — | ~0.73 |
 | Logistic Regression (enhanced) | | | | |
 | Random Forest | | | | |
-| **XGBoost** ✅ | | | | |
+| **XGBoost** ✅✅ | | | | |
 | Stacking Ensemble | | | | |
 
 > **XGBoost was selected as the final model.** The stacking ensemble performed marginally lower, likely due to the linear meta-learner limiting combination of non-linear base outputs.
@@ -127,7 +123,7 @@ pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn xgboos
 
 =====================
 
-## 🚀 How to Run
+## **How to Run**
 
 ### Step 1 — Clone the repository
 
@@ -177,8 +173,8 @@ feature_names  = payload['feature_names']
 threshold      = payload['best_threshold']
 scaler         = payload['scaler']
 
-# Prepare your input data (must match the engineered feature set)
-# X_new = pd.DataFrame(...)  # your new data
+# Prepare input data (must match the engineered feature set)
+# X_new = pd.DataFrame(...)  # the new data
 
 X_new_aligned = X_new[feature_names]
 proba = model.predict_proba(X_new_aligned)[:, 1]
@@ -204,7 +200,7 @@ Each `.pkl` payload contains:
 
 =====================
 
-## 📊 Key Findings
+## Key Findings
 
 - **Economic indicators** (`nr.employed`, `euribor3m`, `emp.var.rate`) are the strongest predictors but are highly correlated (r up to 0.97). PCA reduces this multicollinearity effectively.
 - **`poutcome = success`** (previous campaign outcome) is the strongest categorical predictor.
