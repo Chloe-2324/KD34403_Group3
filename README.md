@@ -215,7 +215,10 @@ Each `.pkl` payload contains:
 ### Step 1 — Upload the Notebook
 
 1. Open Google Colab
-2. Upload notebook.ipynb
+2. Click on the File tab 
+3. Click Open Notebook
+4. Click Github
+5. Paste repository URL 
 
 ### Step 2 — Install Required Libraries
 
