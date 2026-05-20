@@ -210,5 +210,58 @@ Each `.pkl` payload contains:
 
 =====================
 
+## **Using Google Colab**
+
+### Step 1 — Upload the Notebook
+
+1. Open Google Colab
+2. Upload notebook.ipynb
+
+### Step 2 — Install Required Libraries
+
+```python
+!pip install pandas numpy matplotlib seaborn scikit-learn \
+imbalanced-learn xgboost scikit-optimize joblib ucimlrepo
+```
+
+### Step 3 — Upload Dataset (Optional)
+
+If bank-additional-full.csv is not already included:
+
+```python
+from google.colab import files
+uploaded = files.upload()
+```
+Then select bank-additional-full.csv.
+
+If the notebook already auto-downloads the dataset from the UCI repository, this step can be skipped.
+
+### Step 4 — Create Model Save Directory
+
+Since Colab starts with a clean environment each session, create the model directory manually:
+
+```python
+import os
+os.makedirs("saved_models", exist_ok=True)
+```
+
+### Step 5 — Run All Cells
+
+Run the notebook sequentially from top to bottom.
+
+Training may take 20–60 minutes depending on Colab hardware availability.
+
+### Step 6 — Download Saved Models
+
+```python
+from google.colab import files
+
+files.download('saved_models/best_xgb.pkl')
+files.download('saved_models/best_rf.pkl')
+files.download('saved_models/best_lr.pkl')
+```
+
+=====================
+
 ## Dataset
 Dataset: [UCI Machine Learning Repository — Bank Marketing](https://archive.ics.uci.edu/dataset/222/bank+marketing)
