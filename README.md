@@ -90,8 +90,8 @@ All models also underwent **threshold tuning** on the validation set to maximise
 
 | Model | Accuracy | Balanced Accuracy | F1-Score | ROC-AUC |
 |-------|----------|-------------------|----------|---------|
-| LR Baseline (demographics only) | — | ~0.69 | — | ~0.73 |
-| Logistic Regression (enhanced) | | | | |
+| LR Baseline (demographics only) | 0.6250 | 0.5993 | 0.2538 | 0.6395 |
+| Logistic Regression (enhanced) | 0.8283 | 0.7502 | 0.4601 | 0.8026 |
 | Random Forest | | | | |
 | **XGBoost** ✅✅ | | | | |
 | Stacking Ensemble | | | | |
